@@ -24,6 +24,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+    </header>
+
+    <main>
+      <div id="flash">
+        <%= render "layouts/flash" %>
+      </div>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      Atypies
+    </footer>
   </body>
 </html>
