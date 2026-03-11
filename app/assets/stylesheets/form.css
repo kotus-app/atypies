@@ -1,0 +1,43 @@
+@layer components {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 100ch;
+  }
+
+  @media (min-width: 768px) {
+    form {
+      width: 80ch;
+
+      input[type=submit] {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 0.5rem;
+  }
+
+  form input[type=text] {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-weight: normal;
+    padding: 0.5rem;
+  }
+
+  form input[type=submit] {
+    background: none;
+    border: 1px solid #7b13d6;
+    border-radius: 5px;
+    color: #7b13d6;
+    font-weight: 700;
+    padding: 0.5rem;
+  }
+}
