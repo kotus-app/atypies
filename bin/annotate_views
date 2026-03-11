@@ -15,4 +15,4 @@ Dir.glob("#{views_root}/**/*.{erb,html.erb}").sort.each do |file|
   File.write(file, "#{expected_comment}\n\n" + lines.join)
 end
 
-puts "done."
+puts "👋 Annotate views done."

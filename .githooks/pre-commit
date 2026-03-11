@@ -1,0 +1,7 @@
+#!/bin/sh
+bin/annotate_views
+
+# Re-stage any views that were just annotated
+git diff --name-only app/views/**/*.erb | xargs git add 2>/dev/null
+
+exit 0
