@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# Adds a path comment on the first line of each view file if missing.
+
+views_root = File.expand_path("../app/views", __dir__)
+
+Dir.glob("#{views_root}/**/*.{erb,html.erb}").sort.each do |file|
+  relative_path = "app/views/" + file.delete_prefix("#{views_root}/")
+  expected_comment = "<%# #{relative_path} %>"
+
+  lines = File.readlines(file)
+
+  next if lines.first&.strip == expected_comment
+
+  puts "annotating: #{relative_path}"
+  File.write(file, "#{expected_comment}\n\n" + lines.join)
+end
+
+puts "done."
